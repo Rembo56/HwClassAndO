@@ -1,10 +1,10 @@
 public class Book{
-   private static String title;
-   private static int year;
+   private String title;
+   private int year;
    private Author author;
-   public Book(Author author){
-       this.author=author;
-   }
+    // public Book(Author author){
+       //this.author=author;
+  // }
     //String name=Author.name;
    // String surName=Author.surName;
 
