@@ -26,4 +26,40 @@ public class Book{
     public Author getAuthor(){
        return this.author;
     }
+
+    public String toString() {
+        return "Название: "+this.title+", год: " +this.year+"\n"+this.author.printFullName();
+    }
+
+
+    public String printFullDescription(){
+        return "Название: "+this.title+", год: " +this.year;
+    }
+    @Override
+    public boolean equals(Object other) {
+        if (this==other){
+            return true;
+        }
+        if(other==null||getClass()!=other.getClass()){
+            return false;
+        }
+        Book book=(Book) other;
+        if (getTitle()!=book.getTitle()){
+            return false;
+        }
+        if (getYear()!=book.getYear()){
+            return false;
+        }
+        return printFullDescription()!=null
+                ? printFullDescription().equals(book.printFullDescription())
+                : book.printFullDescription()==null;
+
+    }
+
+    @Override
+    public int hashCode(){
+        int result=title==null ?0: title.hashCode();
+        result=result+year;
+        return result;
+    }
 }
