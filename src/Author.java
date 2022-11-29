@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Author {
     //public static int year;
     private String name;
@@ -19,7 +21,8 @@ public class Author {
     }
     @Override
     public boolean equals(Object other) {
-        if (this==other){
+        return this.name==name && this.surName==surName;
+        /*if (this==other){
             return true;
         }
         if(other==null||getClass()!=other.getClass()){
@@ -34,7 +37,7 @@ public class Author {
         }
         return printFullName()!=null
                 ? printFullName().equals(author.printFullName())
-                : author.printFullName()==null;
+                : author.printFullName()==null;*/
 
     }
 
@@ -44,5 +47,6 @@ public class Author {
         result=result+surName==null ?0:surName.hashCode();
         return result;
     }
+
 }
 

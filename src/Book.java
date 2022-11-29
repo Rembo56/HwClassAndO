@@ -37,7 +37,8 @@ public class Book{
     }
     @Override
     public boolean equals(Object other) {
-        if (this==other){
+        return this.year==year&&this.title==title&& this.author.getName() == author.getName()&&this.author.getSurName() == author.getSurName();
+        /*if (this==other){
             return true;
         }
         if(other==null||getClass()!=other.getClass()){
@@ -52,7 +53,7 @@ public class Book{
         }
         return printFullDescription()!=null
                 ? printFullDescription().equals(book.printFullDescription())
-                : book.printFullDescription()==null;
+                : book.printFullDescription()==null;*/
 
     }
 
