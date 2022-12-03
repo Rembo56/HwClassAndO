@@ -21,6 +21,12 @@ public class Author {
     }
     @Override
     public boolean equals(Object other) {
+        if (this==other){
+            return true;
+        }
+        if(other==null||getClass()!=other.getClass()){
+            return false;
+        }
         return this.name==name && this.surName==surName;
         /*if (this==other){
             return true;

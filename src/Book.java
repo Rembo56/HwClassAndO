@@ -35,8 +35,18 @@ public class Book{
     public String printFullDescription(){
         return "Название: "+this.title+", год: " +this.year;
     }
+
+
+
     @Override
     public boolean equals(Object other) {
+        if (this==other){
+            return true;
+        }
+        if(other==null||getClass()!=other.getClass()){
+            return false;
+        }
+        Book book=(Book) other;
         return this.year==year&&this.title==title&& this.author.getName() == author.getName()&&this.author.getSurName() == author.getSurName();
         /*if (this==other){
             return true;
@@ -63,4 +73,5 @@ public class Book{
         result=result+year;
         return result;
     }
+
 }
